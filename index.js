@@ -29,6 +29,7 @@ function paintStart(e){
     xMouse = e.offsetX;
     yMouse = e.offsetY;
     painting = true;
+    draw(xMouse, yMouse, xMouse+1, yMouse+1);
 }
 
 canvas.addEventListener("mousemove", (e) => {
