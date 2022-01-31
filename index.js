@@ -16,16 +16,15 @@ canvas.setAttribute("width",canvasWidth);
 //*COLOR CONFIGURATION
 document.querySelector("#color-input").addEventListener("change", function(){
     color = this.value;
-})
+});
 
 //*DRAWING STUFF
 canvas.addEventListener("mousedown",(e) => {
     paintStart(e);
-});
-canvas.addEventListener("touchstart",(e) => {
-    e.preventDefault();
-    paintStart(e);
-});
+}, false);
+// canvas.addEventListener("touchstart",(e) => {
+//     paintStart(e);
+// }, false);
 function paintStart(e){
     xMouse = e.offsetX;
     yMouse = e.offsetY;
@@ -35,11 +34,10 @@ function paintStart(e){
 
 canvas.addEventListener("mousemove", (e) => {
     paintMove(e);
-});
-canvas.addEventListener("touchmove", (e) => {
-    e.preventDefault();
-    paintMove(e);
-});
+}, false);
+// canvas.addEventListener("touchmove", (e) => {
+//     paintMove(e);
+// }, false);
 function paintMove(e){
     if(painting === true){
         draw(xMouse, yMouse, e.offsetX, e.offsetY);
@@ -50,11 +48,10 @@ function paintMove(e){
 
 document.addEventListener("mouseup",(e) => {
     paintStop(e);
-});
-document.addEventListener("touchend",(e) => {
-    e.preventDefault();
-    paintStop(e);
-});
+}, false);
+// document.addEventListener("touchend",(e) => {
+//     paintStop(e);
+// }, false);
 function paintStop(e){
     xMouse = e.offsetX;
     yMouse = e.offsetY;
