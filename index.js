@@ -22,7 +22,7 @@ document.querySelector("#color-input").addEventListener("change", function(){
 canvas.addEventListener("mousedown",(e) => {
     paintStart(e);
 });
-canvas.addEventListener("touchdown",(e) => {
+canvas.addEventListener("touchstart",(e) => {
     paintStart(e);
 });
 function paintStart(e){
@@ -34,7 +34,7 @@ function paintStart(e){
 canvas.addEventListener("mousemove", (e) => {
     paintMove(e);
 });
-canvas.addEventListener("touchemove", (e) => {
+canvas.addEventListener("touchmove", (e) => {
     paintMove(e);
 });
 function paintMove(e){
@@ -48,7 +48,7 @@ function paintMove(e){
 document.addEventListener("mouseup",(e) => {
     paintStop(e);
 });
-document.addEventListener("touchup",(e) => {
+document.addEventListener("touchend",(e) => {
     paintStop(e);
 });
 function paintStop(e){
