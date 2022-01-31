@@ -31,7 +31,7 @@ canvas.addEventListener("mousemove", function(e){
         yMouse = e.offsetY;
     }
 });
-canvas.addEventListener("mouseup",function(e){
+document.addEventListener("mouseup",function(e){
     xMouse = e.offsetX;
     yMouse = e.offsetY;
     painting = false;
@@ -40,6 +40,8 @@ function draw(x1,y1,x2,y2){
     context.beginPath();
     context.strokeStyle = color;
     context.lineWidth = penWidth;
+    context.lineCap = "round";
+    context.lineJoin = "round";
     context.moveTo(x1,y1);
     context.lineTo(x2,y2);
     context.stroke();
