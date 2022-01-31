@@ -19,23 +19,44 @@ document.querySelector("#color-input").addEventListener("change", function(){
 })
 
 //*DRAWING STUFF
-canvas.addEventListener("mousedown",function(e){
+canvas.addEventListener("mousedown",(e) => {
+    paintStart(e);
+});
+canvas.addEventListener("touchdown",(e) => {
+    paintStart(e);
+});
+function paintStart(e){
     xMouse = e.offsetX;
     yMouse = e.offsetY;
     painting = true;
+}
+
+canvas.addEventListener("mousemove", (e) => {
+    paintMove(e);
 });
-canvas.addEventListener("mousemove", function(e){
+canvas.addEventListener("touchemove", (e) => {
+    paintMove(e);
+});
+function paintMove(e){
     if(painting === true){
         draw(xMouse, yMouse, e.offsetX, e.offsetY);
         xMouse = e.offsetX;
         yMouse = e.offsetY;
     }
+}
+
+document.addEventListener("mouseup",(e) => {
+    paintStop(e);
 });
-document.addEventListener("mouseup",function(e){
+document.addEventListener("touchup",(e) => {
+    paintStop(e);
+});
+function paintStop(e){
     xMouse = e.offsetX;
     yMouse = e.offsetY;
     painting = false;
-});
+}
+
 function draw(x1,y1,x2,y2){
     context.beginPath();
     context.strokeStyle = color;
