@@ -51,6 +51,7 @@ document.querySelector("#pen-width").addEventListener("change", function(){
     penWidth = this.value;
 });
 
+
 //!MY perfecly useles code
 // draw(xMouse, yMouse, Math.floor(e.clientX - canvasPosition.left), Math.floor(e.clientY - canvasPosition.top));
 // xMouse = Math.floor(e.clientX - canvasPosition.left);
