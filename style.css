@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.canvas{
+    height: 500px;
+    margin: 10px 5%;
+    outline: 2px solid gray;
+    width: 90%;
+}
