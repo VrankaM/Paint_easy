@@ -1,7 +1,7 @@
 //*GLOBAL VARIABLES
 var canvas = document.querySelector(".canvas");
 var canvasPosition = canvas.getBoundingClientRect();
-var color = "red";
+var color = document.querySelector("#color-input").value;
 var context = canvas.getContext("2d");
 var painting = false;
 var penWidth = document.querySelector("#pen-width").value;
@@ -12,6 +12,11 @@ var xMouse, yMouse = 0;
 var canvasWidth = (screenWidth/100) * 90;
 canvas.style.width = canvasWidth + "px";
 canvas.setAttribute("width",canvasWidth);
+
+//*COLOR CONFIGURATION
+document.querySelector("#color-input").addEventListener("change", function(){
+    color = this.value;
+})
 
 //*DRAWING STUFF
 canvas.addEventListener("mousedown",function(e){
