@@ -23,6 +23,7 @@ canvas.addEventListener("mousedown",(e) => {
     paintStart(e);
 });
 canvas.addEventListener("touchstart",(e) => {
+    e.preventDefault();
     paintStart(e);
 });
 function paintStart(e){
@@ -36,6 +37,7 @@ canvas.addEventListener("mousemove", (e) => {
     paintMove(e);
 });
 canvas.addEventListener("touchmove", (e) => {
+    e.preventDefault();
     paintMove(e);
 });
 function paintMove(e){
@@ -50,6 +52,7 @@ document.addEventListener("mouseup",(e) => {
     paintStop(e);
 });
 document.addEventListener("touchend",(e) => {
+    e.preventDefault();
     paintStop(e);
 });
 function paintStop(e){
