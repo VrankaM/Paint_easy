@@ -18,7 +18,7 @@ canvas.setAttribute("height",canvasHeight);
 
 function updateCanvasHeight(){
     canvasHeight = canvasHeightInput.value;
-    canvas.style.height = canvasHeight + "px";
+    canvas.style.height = canvasHeight + "px"; 
     canvas.setAttribute("height",canvasHeight);
 }
 canvasHeightInput.addEventListener("change", updateCanvasHeight);
