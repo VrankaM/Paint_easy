@@ -8,13 +8,16 @@
     <title>Paint</title>
 </head>
 <body>
-    <canvas class="canvas" width="" height="500"></canvas>
+    <canvas class="canvas" width="" height="800"></canvas>
     <div class="controls">
-        <label for="color">Color: </label>
+        <label for="color-input">Color: </label>
         <input type="color" name="color" id="color-input">
         <br>
         <label for="pen-width">Pen width: </label>
         <input type="number" name="pen-width" id="pen-width" value="1" min="0">
+        <br>
+        <label for="">Canvas height (px):</label>
+        <input type="number" name="canvas-height" id="canvas-height" value="800" min="10" max="5000">
     </div>
     <script src="index.js"></script>
 </body>

@@ -1,12 +1,27 @@
 //*GLOBAL VARIABLES
 var canvas = document.querySelector(".canvas");
+var canvasHeightInput = document.querySelector("#canvas-height");
 var canvasPosition = canvas.getBoundingClientRect();
 var color = document.querySelector("#color-input").value;
 var context = canvas.getContext("2d");
 var painting = false;
 var penWidth = document.querySelector("#pen-width").value;
+var screenHeight = window.innerHeight;
 var screenWidth = window.innerWidth;
 var xMouse, yMouse = 0;
+
+//*CANVAS HEIGHT CONFIGURATION
+var canvasHeight = Math.floor((screenHeight/100) * 70);
+canvasHeightInput.value = canvasHeight;
+canvas.style.height = canvasHeight + "px";
+canvas.setAttribute("height",canvasHeight);  
+
+function updateCanvasHeight(){
+    canvasHeight = canvasHeightInput.value;
+    canvas.style.height = canvasHeight + "px";
+    canvas.setAttribute("height",canvasHeight);
+}
+canvasHeightInput.addEventListener("change", updateCanvasHeight);
 
 //*CANVAS WIDTH CONFIGURATION
 var canvasWidth = (screenWidth/100) * 90;
