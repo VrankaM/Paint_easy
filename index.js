@@ -1,6 +1,7 @@
-//*GLOBAL VARIABLES
+//GLOBAL VARIABLES
 var canvas = document.querySelector(".canvas");
 var canvasHeightInput = document.querySelector("#canvas-height");
+var canvasWidthInput = document.querySelector("#canvas-width");
 var canvasPosition = canvas.getBoundingClientRect();
 var color = document.querySelector("#color-input").value;
 var context = canvas.getContext("2d");
@@ -10,8 +11,8 @@ var screenHeight = window.innerHeight;
 var screenWidth = window.innerWidth;
 var xMouse, yMouse = 0;
 
-//*CANVAS HEIGHT CONFIGURATION
-var canvasHeight = Math.floor((screenHeight/100) * 70);
+//CANVAS HEIGHT CONFIGURATION
+var canvasHeight = Math.floor((screenHeight/100) * 95);
 canvasHeightInput.value = canvasHeight;
 canvas.style.height = canvasHeight + "px";
 canvas.setAttribute("height",canvasHeight);  
@@ -23,17 +24,25 @@ function updateCanvasHeight(){
 }
 canvasHeightInput.addEventListener("change", updateCanvasHeight);
 
-//*CANVAS WIDTH CONFIGURATION
-var canvasWidth = (screenWidth/100) * 90;
+//CANVAS WIDTH CONFIGURATION
+var canvasWidth = Math.floor((screenWidth/100) * 90);
+canvasWidthInput.value = canvasWidth;
 canvas.style.width = canvasWidth + "px";
 canvas.setAttribute("width",canvasWidth);
 
-//*COLOR CONFIGURATION
+function updateCanvasWidth(){
+    canvasWidth = canvasWidthInput.value;
+    canvas.style.width = canvasWidth + "px"; 
+    canvas.setAttribute("width",canvasWidth);
+}
+canvasWidthInput.addEventListener("change", updateCanvasWidth);
+
+//COLOR CONFIGURATION
 document.querySelector("#color-input").addEventListener("change", function(){
     color = this.value;
 });
 
-//*DRAWING STUFF
+//DRAWING STUFF
 canvas.addEventListener("mousedown",(e) => {
     paintStart(e);
 }, false);
@@ -85,7 +94,7 @@ function draw(x1,y1,x2,y2){
     context.closePath();
 }
 
-//*PEN WIDTH CONFIGURATION
+//PEN WIDTH CONFIGURATION
 document.querySelector("#pen-width").addEventListener("change", function(){
     penWidth = this.value;
 });

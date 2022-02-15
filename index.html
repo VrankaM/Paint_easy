@@ -9,15 +9,25 @@
 </head> 
 <body>
     <canvas class="canvas" width="" height="800"></canvas>
-    <div class="controls">
-        <label for="color-input">Color: </label>
-        <input type="color" name="color" id="color-input">
-        <br>
-        <label for="pen-width">Pen width: </label>
-        <input type="number" name="pen-width" id="pen-width" value="1" min="0">
-        <br>
-        <label for="">Canvas height (px):</label>
-        <input type="number" name="canvas-height" id="canvas-height" value="800" min="10" max="5000">
+    <div class="controls-container">
+        <div class="controls">
+            <div class="controls-item" id="controls-color">
+                <label for="color-input">Color: </label>
+                <input type="color" name="color" id="color-input">
+            </div>
+            <div class="controls-item" id="controls-pen">
+                <label for="pen-width">Pen width: </label>
+                <input type="number" name="pen-width" id="pen-width" value="1" min="0">
+            </div>
+            <div class="controls-item" id="controls-height">
+                <label for="canvas-height">Canvas height (px):</label>
+                <input type="number" name="canvas-height" id="canvas-height" value="800" min="10" max="5000">
+            </div>
+            <div class="controls-item" id="controls-width">
+                <label for="canvas-width">Canvas width (px):</label>
+                <input type="number" name="canvas-width" id="canvas-width" value="800" min="10" max="5000">
+            </div>
+        </div>
     </div>
     <script src="index.js"></script>
 </body>

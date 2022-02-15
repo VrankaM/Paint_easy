@@ -3,9 +3,48 @@
     padding: 0;
 }
 
+:root{
+    --controls-height: 10vh;
+}
+
+html{
+    background-color: whitesmoke;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
 .canvas{
+    background-color: white;
     height: 800px; 
-    margin: 10px 5%;
+    margin: 10px 5% var(--controls-height);
     outline: 2px solid gray;
-    width: 90%;
+    width: 800px;
+}
+
+.controls{
+    display: inline-flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    width: 100%;
+}
+.controls-container{
+    background-color: white;
+    border: 2px solid black;
+    border-bottom: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    bottom: 0;
+    display: block;
+    height: var(--controls-height);
+    margin: 0 10%;
+    position: fixed;
+    width: calc(80% - 4px);
+    z-index: 10;
+}
+.controls-item{
+    display: inline-block;
 }
