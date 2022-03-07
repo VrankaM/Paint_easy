@@ -46,9 +46,6 @@ document.querySelector("#color-input").addEventListener("change", function(){
 canvas.addEventListener("mousedown",(e) => {
     paintStart(e);
 }, false);
-// canvas.addEventListener("touchstart",(e) => {
-//     paintStart(e);
-// }, false);
 function paintStart(e){
     xMouse = e.offsetX;
     yMouse = e.offsetY;
@@ -59,9 +56,6 @@ function paintStart(e){
 canvas.addEventListener("mousemove", (e) => {
     paintMove(e);
 }, false);
-// canvas.addEventListener("touchmove", (e) => {
-//     paintMove(e);
-// }, false);
 function paintMove(e){
     if(painting === true){
         draw(xMouse, yMouse, e.offsetX, e.offsetY);
@@ -73,9 +67,6 @@ function paintMove(e){
 document.addEventListener("mouseup",(e) => {
     paintStop(e);
 }, false);
-// document.addEventListener("touchend",(e) => {
-//     paintStop(e);
-// }, false);
 function paintStop(e){
     xMouse = e.offsetX;
     yMouse = e.offsetY;
