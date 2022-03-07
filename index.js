@@ -73,6 +73,10 @@ function paintStop(e){
     painting = false;
 }
 
+canvas.addEventListener("mouseleave", (e) => {
+    paintStop(e);
+}, false)
+
 function draw(x1,y1,x2,y2){
     context.beginPath();
     context.strokeStyle = color;
