@@ -1,18 +1,20 @@
 //GLOBAL VARIABLES
-var canvas = document.querySelector(".canvas");
-var canvasHeightInput = document.querySelector("#canvas-height");
-var canvasWidthInput = document.querySelector("#canvas-width");
-var canvasPosition = canvas.getBoundingClientRect();
-var color = document.querySelector("#color-input").value;
-var context = canvas.getContext("2d");
-var painting = false;
-var penWidth = document.querySelector("#pen-width").value;
-var screenHeight = window.innerHeight;
-var screenWidth = window.innerWidth;
-var xMouse, yMouse = 0;
+let canvas = document.querySelector(".canvas");
+let canvasHeightInput = document.querySelector("#canvas-height");
+let canvasWidthInput = document.querySelector("#canvas-width");
+let canvasPosition = canvas.getBoundingClientRect();
+let color = document.querySelector("#color-input").value;
+let context = canvas.getContext("2d");
+let controls = document.querySelector(".controls-container");
+let painting = false;
+let penWidth = document.querySelector("#pen-width").value;
+let screenHeight = window.innerHeight;
+let screenWidth = window.innerWidth;
+let settings = document.querySelector(".panel-settings");
+let xMouse, yMouse = 0;
 
 //CANVAS HEIGHT CONFIGURATION
-var canvasHeight = Math.floor((screenHeight/100) * 95);
+let canvasHeight = Math.floor((screenHeight/100) * 95);
 canvasHeightInput.value = canvasHeight;
 canvas.style.height = canvasHeight + "px";
 canvas.setAttribute("height",canvasHeight);  
@@ -25,7 +27,7 @@ function updateCanvasHeight(){
 canvasHeightInput.addEventListener("change", updateCanvasHeight);
 
 //CANVAS WIDTH CONFIGURATION
-var canvasWidth = Math.floor((screenWidth/100) * 90);
+let canvasWidth = Math.floor((screenWidth/100) * 90);
 canvasWidthInput.value = canvasWidth;
 canvas.style.width = canvasWidth + "px";
 canvas.setAttribute("width",canvasWidth);
@@ -94,3 +96,11 @@ document.querySelector("#pen-width").addEventListener("change", function(){
     penWidth = this.value;
 });
 
+//SETTINGS 
+settings.addEventListener("click", function(){
+    if(controls.style.display == "block"){
+        controls.style.display = "none";
+    }else{
+        controls.style.display = "block";
+    }
+});
